@@ -28,7 +28,7 @@ const handleNavBar = () =>{
         <li className='cursor-pointer list-none'> 
         
         <div className="dropdown" style={{ float: 'left'}}>
-  <button className="text-1xl cursor-pointer flex items-center ">Products<span><FiChevronDown/></span></button>
+  <button className="text-1xl cursor-pointer flex items-center ">Products</button>
   <div className="dropdown-content text-xl" style={{left: 0}}>
   <a href="#" onClick={handleNavBar}>Device repair</a>
   <a href="#" onClick={handleNavBar}>Tech shop</a>
@@ -69,7 +69,7 @@ const handleNavBar = () =>{
         <li className='cursor-pointer list-none w-36 outline-none'>
 
         <div className="dropdown" style={{ float: 'left'}}>
-        <button className="text-1xl cursor-pointer dropdown-btn text-3xl text-black font-medium flex items-center ">Products <span><FiChevronDown/></span></button>
+        <button className="text-1xl cursor-pointer dropdown-btn text-3xl text-black font-medium flex items-center ">Products </button>
   <div className="dropdown-content w-44 text-xl " style={{left: 0}}>
   <a href="#" onClick={handleNavBar}>Device repair</a>
   <a href="#" onClick={handleNavBar}>Tech shop</a>

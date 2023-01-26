@@ -3,7 +3,8 @@ import NavBar from "../NavBar/NavBar";
 import "./Hero.css";
 import enginner from "../Assets/icons/engineer.png";
 import customer from "../Assets/icons/customer.png";
-import imgBcg from "../Assets/images/background.jfif";
+import CustomerImg from "../Assets/images/CUSTOMER.png";
+import engineer from "../Assets/images/background.jfif";
 
 import { Steps } from 'antd';
 
@@ -24,7 +25,7 @@ const Hero = () => {
       <>
         <div className=" h-full w-full flex flex-col items-center ">
           <div className="h-64 flex flex-col w-10/12 text-center items-center ">
-            <h1 className="md:text-5xl text-2xl font-bold mt-10 md:w-10/12 md:px-0  px-2">
+            <h1 className="md:text-5xl text-2xl font-bold mt-5 md:w-10/12 md:px-0  px-2">
               Get in the Enginner seat and get paid
             </h1>
             <p className="md:text-1xl mt-5 px-2 md:px-0">
@@ -32,10 +33,10 @@ const Hero = () => {
             </p>
           </div>
           {/* text wrapper */}
-          <div className="w-10/12 h-32 flex flex-col justify-between">
+          <div className="w-10/12 h-32 mb-28 flex flex-col justify-between">
             <div>
              
-              <button className="bg-green-400 text-1xl p-3 cursor-pointer text-white ">
+              <button className="bg-green-400 text-1xl p-3 mb-10 cursor-pointer text-white ">
                 Sign up to repair
               </button>
             </div>
@@ -85,19 +86,27 @@ const Hero = () => {
       </>
     );
   
-
-  console.log(brand, model);
+   const customerStyle ={
+      backgroundImage: `url(${CustomerImg})`,  
+      backgroundRepeat: "no-repeat",
+      backgroundSize: "cover",
+      backgroundPosition: '',
+      boxShadow: "inset 0 0 0 2000px rgba(0, 0, 0, 0.219)",
+      transition: '0.7s',
+    }  
+ const  engineerStyle ={
+  backgroundImage: `url(${engineer})`,  
+  backgroundRepeat: "no-repeat",
+  backgroundSize: "cover",
+  backgroundPosition: "center",
+  boxShadow: "inset 0 0 0 2000px rgba(0, 0, 0, 0.219)",
+  transition: '0.7s'
+}
   return (
     <>
       <div
         className=" w-full Hero"
-        style={{
-          backgroundImage: `url(${imgBcg})`,
-          backgroundRepeat: "no-repeat",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          boxShadow: "inset 0 0 0 2000px rgba(0, 0, 0, 0.219)",
-        }}
+        style={switchUSer  ? customerStyle : engineerStyle }
       >
         <NavBar />
 
@@ -106,7 +115,7 @@ const Hero = () => {
             {/* small cont inside the hero section */}
             <div className="bg-white lg:w-4/12 md:w-9/12 w-11/12 cus-triger md:ml-10 lg:ml-40">
               {/* small nav  start */}
-              <div className="w-full flex justify-between  items-center h-20 bg-pink-200">
+              <div className="w-full flex justify-between   items-center h-20 Small-nav">
                 <div
                   className="flex justify-center w-full h-full items-center flex-col customer"
                   onClick={handleSwitch}
