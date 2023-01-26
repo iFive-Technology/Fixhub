@@ -6,7 +6,7 @@ import customer from "../Assets/icons/customer.png";
 import imgBcg from "../Assets/images/background.jfif";
 
 import { Steps } from 'antd';
-import Input from "antd/es/input/Input";
+
 
 const Hero = () => {
   const [switchUSer, setSwitchUser] = useState(true);
@@ -23,8 +23,8 @@ const Hero = () => {
   const Enginer =  (
       <>
         <div className=" h-full w-full flex flex-col items-center ">
-          <div className="h-64 flex flex-col  items-center ">
-            <h1 className="md:text-5xl text-3xl font-bold mt-10 md:w-10/12 md:px-0  px-2">
+          <div className="h-64 flex flex-col w-10/12 text-center items-center ">
+            <h1 className="md:text-5xl text-2xl font-bold mt-10 md:w-10/12 md:px-0  px-2">
               Get in the Enginner seat and get paid
             </h1>
             <p className="md:text-1xl mt-5 px-2 md:px-0">
@@ -53,7 +53,7 @@ const Hero = () => {
   const Customer = (
       <>
         <div className="  w-full flex flex-col items-center ">
-        <div className="md:text-5xl text-3xl w-10/12 flex justify-center  font-bold mt-5 text-black">
+        <div className="md:text-5xl text-2xl w-10/12 flex justify-center text-center  font-bold mt-5 text-black">
             <h1>Order for a repair now</h1>
         </div>
 
