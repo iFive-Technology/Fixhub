@@ -1,0 +1,19 @@
+.Hero{
+    height: 730px;
+}
+.cus-triger{
+    height: 500px;
+}
+.customer:hover, .enginner:hover{ 
+cursor: pointer;
+}
+.customer:hover, .enginner:hover{ 
+    transition: 0.2s;
+    border-bottom:2px solid rgb(50, 196, 6) ; 
+    color: rgba(0, 0, 0, 0.219);
+}
+
+.customer:active, .enginner:active{ 
+    border-bottom:2px solid green ; 
+
+}
