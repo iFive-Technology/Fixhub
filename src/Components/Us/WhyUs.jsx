@@ -1,9 +1,9 @@
 import './WhyUs.css'
 const WhyUs = () => {
     return (
-        <div className='why-us'>
-            <div className="choose-image">
-                <img src="https://scontent.facc5-2.fna.fbcdn.net/v/t39.30808-6/246809751_244803487666953_3603758423465981508_n.png?_nc_cat=101&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeEKbytd6ruNMVUQ1rphyqXOlKUXlrlTblyUpReWuVNuXI6e5Uwnw-APnFy9ttLDWVmqQP7NbYNH2TLo3suCA97U&_nc_ohc=3jNhP_kcS98AX_3GE4X&_nc_zt=23&_nc_ht=scontent.facc5-2.fna&oh=00_AfBkfPZF8QW9nr9Pve57YrHBdRkWGA6ZwtnUi6jG_-fMYg&oe=63D1B8CF" />
+        <div className='why-us px-3'>
+            <div className="choose-image mt-10">
+                <img src="https://img.freepik.com/free-photo/pink-headphones-wireless-digital-device_53876-96804.jpg?w=996&t=st=1674823481~exp=1674824081~hmac=72b481929251ca5716ded26c013b2661df3db58ff57ebd47de3d51b37a316dfb" alt='earpic' />
             </div>
 
             <div className="choose-area">
