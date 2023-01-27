@@ -1,8 +1,0 @@
-.App{
-    overflow-x: hidden;
-}
-@media (max-width: 840px) {
-   .App{
-    overflow-y: hidden;
-   }
-}
