@@ -1,0 +1,10 @@
+.shop-now{
+    height: 550px;
+    
+}
+@media screen and (max-width: 375px) {
+    .shop-now{
+        height: 650px;
+
+    }
+}
