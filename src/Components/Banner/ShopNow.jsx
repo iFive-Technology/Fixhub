@@ -10,7 +10,7 @@ const ShopNow = () => {
         width="637.032"
         height="773.597"
         viewBox="175.989 168.483 637.032 773.597"
-        className="w-80 absolute md:top-72 md:left-5 bottom-80 right-44 blob1"
+        className="w-80 absolute md:top-72 md:left-10 bottom-80 right-44 blob1"
       >
         <defs>
           <clipPath id="a">
@@ -29,8 +29,8 @@ const ShopNow = () => {
       </svg>
 
       <div className="w-full flex flex-col items-center mt-20 ">
-        <h1 className="md:text-5xl text-4xl font-bold z-10 text-center">
-          Buy AirPods Today with 20% Discount
+        <h1 className="lg:text-7xl md:text-5xl text-4xl font-bold z-10 text-center">
+          Buy AirPods Today <br  className="hidden md:block"/> with 20% Discount
         </h1>
 
         <button className="w-44 mt-14 p-4 rounded-md bg-yellow-300 z-10 ">
@@ -43,7 +43,7 @@ const ShopNow = () => {
           width="637.032"
           height="773.597"
           viewBox="175.989 168.483 637.032 773.597"
-          className="w-80 absolute md:bottom-28 blob2 md:left-2/3 "
+          className="w-80 absolute md:bottom-32 blob2 md:left-2/3 "
         >
           <defs>
             <clipPath id="a">

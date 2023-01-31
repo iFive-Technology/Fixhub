@@ -53,12 +53,12 @@ const handleNavBar = () =>{
 <div  className=' relative bg-black h-14 w-full md:hidden p-0 m-0 flex justify-between items-center'>
 <div className=' flex items-center h-14'><img src={logo} alt="" className='mobile-logo' /></div>
 
-<div className='flex  items-center  gap-5 mr-5'>
-  <div className='flex gap-3 ml-5'>
+<div className='flex  items-center '>
+  <div className='flex gap-3 mr-3 ml-5'>
   <li className=' text-white w-20 list-none flex justify-center p-1 rounded-lg cursor-pointer'>Login</li>
         <li className='bg-white text-black w-20 list-none flex justify-center p-1 rounded-lg cursor-pointer'>Sign up</li>
   </div> 
-    <span className='text-xl text-white'> {showBar ? <FiX onClick={handleNavBar}/> : <FaBars onClick={handleNavBar}/> }</span>
+    <span className='text-xl text-white mr-2'> {showBar ? <FiX onClick={handleNavBar}/> : <FaBars onClick={handleNavBar}/> }</span>
         </div>
         
         <div className={showBar ? 'bg-white  w-full h-screen z-10 absolute top-14' : 'hidden'}>

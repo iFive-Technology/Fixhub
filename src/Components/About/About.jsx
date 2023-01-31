@@ -22,8 +22,8 @@ const About = () => {
                     As Fast As You Can
                     Break It.</h2>
 
-                <p className="mdtext-1xl text-sm mt-5">We do fast phone repair. In most cases, technicians will be able to repair your device in just minutes, we’ll normally get your phone in and out in 40 minutes or less.</p>
-                <button className='w-32 p-2 md:p-3 md:w-36 rounded bg-green-500 md:mt-10 mt-5'>About Us</button>
+                <p className="mdtext-1xl text-sm mt-3">We do fast phone repair. In most cases, technicians will be able to repair your device in just minutes, we’ll normally get your phone in and out in 40 minutes or less.</p>
+                <button className='w-32 p-2 md:p-3 md:w-36 rounded bg-green-500 md:mt-10 mt-3'>About Us</button>
             </div>
             
         </div>
