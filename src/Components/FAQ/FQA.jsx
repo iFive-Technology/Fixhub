@@ -19,7 +19,7 @@ const FQA = () => {
   return (
     <>
 <div>
-  <div className='md:mt-52 mt-32  flex flex-col items-center w-full'>
+  <div className='md:mt-48 mt-32  flex flex-col items-center w-full'>
     <h1 className='md:text-5xl font-bold text-4xl text-center'>Frequentry Asked Question's</h1>
     <div className='md:w-8/12 w-11/12 mt-20'>
 

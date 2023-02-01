@@ -4,11 +4,19 @@
     background: linear-gradient(94deg, rgba(0,0,0,1) 56%, rgba(226,226,8,0) 93%);
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (min-width: 375px)  {
     .Shop{
-        height: 820px;
+        position: relative;
+        height: 600px;
         background: rgb(0,0,0);
-background: linear-gradient(180deg, rgba(0,0,0,1) 69%, rgba(226,226,8,0) 100%);
-    
+        background: linear-gradient(180deg, rgba(0,0,0,1) 50%, rgba(226,226,8,0) 93%);
+        
+   
+    }
+    .imgg{
+        position: absolute;
+        bottom: 10%;
+        z-index: -1;
+
     }
 }

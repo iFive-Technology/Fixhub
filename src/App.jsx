@@ -9,6 +9,7 @@ import WeCan from './Components/we-can/WeCan'
 import ShopNow from './Components/Banner/ShopNow'
 import Shop from './Components/shop/Shop'
 import FQA from './Components/FAQ/FQA'
+import News from './Components/LatestNews/News';
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
       <WeCan />
       <Shop />
       <FQA/>
+      <News />
       <ShopNow/>
       <Footer />
     </div>
