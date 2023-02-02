@@ -69,57 +69,57 @@ const weCan = () => {
             <div className="flex w-full flex-col items-center ">
               <ol
                 type=""
-                className="grid grid-cols-2  leading-10 mt-10 w-full text-1xl font-medium md:text-lg "
+                className="grid grid-cols-2  leading-9 mt-10 w-full text-sm  md:text-lg "
               >
-                <li className="flex items-center gap-3">
+                <li className="flex items-center gap-2">
                   <span className="bg-yellow-400 p-1 rounded-xl">
                     <RiNumber1 />
                   </span>{" "}
                   Headphones Plug
                 </li>
-                <li className="flex items-center gap-3">
+                <li className="flex items-center gap-2">
                   <span className="bg-yellow-400 p-1 rounded-xl" >
                     <RiNumber2 />
                   </span>{" "}
                   Charging Port
                 </li>
-                <li className="flex items-center gap-3">
+                <li className="flex items-center gap-2">
                   <span className="bg-yellow-400 p-1 rounded-xl">
                     <RiNumber3 />
                   </span>
                   Home Button
                 </li>
-                <li className="flex items-center gap-3">
+                <li className="flex items-center gap-2">
                   <span  className="bg-yellow-400 p-1 rounded-xl">
                     <RiNumber4 />
                   </span>
                   Side Buttons
                 </li>
-                <li className="flex items-center gap-3">
+                <li className="flex items-center gap-2">
                   <span className="bg-yellow-400 p-1 rounded-xl">
                     <RiNumber5 />
                   </span>
                   iSight Camera
                 </li>
-                <li className="flex items-center gap-3">
+                <li className="flex items-center gap-2">
                   <span className="bg-yellow-400 p-1 rounded-xl">
                     <RiNumber6 />
                   </span>
                   Power Button
                 </li>
-                <li className="flex items-center gap-3">
+                <li className="flex items-center gap-2">
                   <span className="bg-yellow-400 p-1 rounded-xl">
                     <RiNumber7 />
                   </span>
                   Screen
                 </li>
-                <li className="flex items-center gap-3">
+                <li className="flex items-center gap-2">
                   <span className="bg-yellow-400 p-1 rounded-xl">
                     <RiNumber8 />
                   </span>
                   Battery
                 </li>
-                <li className="flex items-center gap-3">
+                <li className="flex items-center gap-2">
                   <span className="bg-yellow-400 p-1 rounded-xl">
                     <RiNumber9 />
                   </span>

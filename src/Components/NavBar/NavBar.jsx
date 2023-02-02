@@ -54,14 +54,15 @@ const handleNavBar = () =>{
 <div className=' flex items-center h-14'><img src={logo} alt="" className='mobile-logo' /></div>
 
 <div className='flex  items-center '>
-  <div className='flex gap-3 mr-3 ml-5'>
-  <li className=' text-white w-20 list-none flex justify-center p-1 rounded-lg cursor-pointer'>Login</li>
-        <li className='bg-white text-black w-20 list-none flex justify-center p-1 rounded-lg cursor-pointer'>Sign up</li>
-  </div> 
-    <span className='text-xl text-white mr-2'> {showBar ? <FiX onClick={handleNavBar}/> : <FaBars onClick={handleNavBar}/> }</span>
+ 
+  <span className='text-xl text-white mr-2'> {showBar ? <FiX onClick={handleNavBar}/> : <FaBars onClick={handleNavBar}/> }</span>
         </div>
         
         <div className={showBar ? 'bg-white  w-full h-screen z-10 absolute top-14' : 'hidden'}>
+        <div className='flex justify-center items-center px-2 h-14 '>
+  <li className=' text-black w-full p-2 text-center list-none rounded-l-md hover:bg-green-500'>Login</li>
+        <li className='bg-green-500 text-black w-full p-2 text-center list-none rounded-r-md  '>Sign up</li>
+  </div>
           <div className='w-full  '>
             <ul className='text-3xl text-black font-medium ml-10 flex flex-col gap-10 mt-10'>
             <li className='cursor-pointer list-none w-36' onClick={handleNavBar}>Service</li>
@@ -69,6 +70,8 @@ const handleNavBar = () =>{
         <li className='cursor-pointer list-none w-36 outline-none'>
 
         <div className="dropdown" style={{ float: 'left'}}>
+           
+
         <button className="text-1xl cursor-pointer dropdown-btn text-3xl text-black font-medium flex items-center ">Products </button>
   <div className="dropdown-content w-44 text-xl " style={{left: 0}}>
   <a href="#" onClick={handleNavBar}>Device repair</a>

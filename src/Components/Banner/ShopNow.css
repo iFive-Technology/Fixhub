@@ -4,21 +4,13 @@
 }
 @media screen and (max-width: 375px) {
     .shop-now{
-        height: 650px;
+        height: 350px;
 
     }
 }
 @media screen and (max-width: 768px) and (min-width: 376px){
     .shop-now{
-        height: 900px;
+        height: 400px;
 
-    }
-    .blob1{
-        top: -40%;
-        right: -25%
-    }
-    .blob2{
-        bottom: -39%;
-        left: -30%
     }
 }

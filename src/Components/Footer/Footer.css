@@ -1,0 +1,11 @@
+p{
+    color: rgb(160, 160, 160);
+}
+.footer{
+    height: auto;
+ 
+}
+.sub-footer{
+    border-bottom: 2px solid rgb(80, 80, 80);
+    padding-bottom: 90px;
+}

@@ -55,7 +55,7 @@ const Hero = () => {
           <h1>Order for a repair now</h1>
         </div>
 
-        <div className="w-10/12 mt-5   ">
+        <div className="w-10/12 mt-2   ">
           <Steps
             direction="vertical"
             size="small"
