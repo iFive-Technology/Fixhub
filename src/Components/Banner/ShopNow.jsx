@@ -4,7 +4,7 @@ import product from "./b-headphone.png";
 
 const ShopNow = () => {
   return (
-    <div className="w-full shop-now  flex items-center md:mb-44 mb-20 md:mt-52 mt-32"style={{ 
+    <div className="w-full shop-now  flex items-center md:mt-52 mt-32"style={{ 
       backgroundImage: `url(${product})`,
       backgroundRepeat: "no-repeat",
       backgroundSize: "cover",
