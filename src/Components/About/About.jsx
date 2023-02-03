@@ -1,6 +1,6 @@
 import './About.css'
 import float from '../Assets/images/flot.png'
-import background from '../Assets/images/backgrondimg.jpg'
+import background from '../Assets/images/backgrondimg.png'
 
 const About = () => {
     return (

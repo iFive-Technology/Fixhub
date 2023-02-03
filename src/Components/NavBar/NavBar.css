@@ -2,8 +2,8 @@
     max-width: 200px;
 }
 .mobile-logo{
-max-width: 150px ;
-margin-left: -20px;
+max-width: 120px ;
+margin-left: 10px;
 }
 
 
@@ -38,4 +38,9 @@ margin-left: -20px;
   
   .dropdown-btn:hover  .dropdown-content  {
     display: block;
+  }
+
+  .link{
+    text-decoration: none;
+    color: #f1f1f1;
   }

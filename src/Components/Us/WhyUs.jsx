@@ -14,7 +14,7 @@ const WhyUs = () => {
                     <div className="w-52 md:w-60 lg:w-72 flex justify-center">
                 <img src={item.image} alt='earpic' className='w-16'/>
             </div>
-                        <h4 className='font-bold text-center text-1xl md:text-xl mt-2'>{item.title}</h4>
+                        <h4 className='font-medium text-center text-1xl md:text-xl mt-2'>{item.title}</h4>
                         <p className='text-center hidden md:block px-2'>{item.slug}</p>
                     </div>
     </>

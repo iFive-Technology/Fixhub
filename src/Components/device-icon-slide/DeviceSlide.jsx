@@ -33,7 +33,7 @@ const deviceType = window.innerWidth;
 
   return (
     <>
-       <div className=' h-44 w-full flex px-5 ' style={{
+    <div className='w-full flex flex-col items-center'style={{
 backgroundImage: `url(${bg})`,
 backgroundRepeat: "no-repeat",
 backgroundSize: "cover",
@@ -41,32 +41,23 @@ backgroundPosition: "center",
 backgroundColor: '#f7f7f7',
 
 }}>
-  <Carousel 
-  responsive={responsive} 
-  autoPlay={deviceType == "mobile" ? false : true}
-  autoPlaySpeed={3000}
-  infinite={true}
-  removeArrowOnDeviceType={["tablet", "mobile"]}
-  transitionDuration={500}
-  arrows={false} 
+  <h1 className='text-center mt-20 font-bold md:text-5xl'>Get Your Repair Started</h1>
+       <div className='"w-11/12 md:w-10/12 gap-y-10 gap-x-5 place-self-center mt-10 grid grid-cols-2 sm:grid-cols-3 place-items-center md:grid-cols-3 lg:grid-cols-4 py-20 ' >
 
-  >
 
         {Slides.map((slide) =>(
- <div className='flex flex-col mt-5 items-center gap-2'>
- <div style={{
-backgroundImage: `url(${slide.img})`,
-backgroundRepeat: "no-repeat",
-backgroundSize: "contain",
-backgroundPosition: "center",
 
-}} className='w-32 h-20'></div>
- <p>{slide.name}</p>
+   <div className='w-32 overflow-hidden h-36 md:h-40  bg-white md:w-40 lg:w-52 flex flex-col items-center border-none outline-none justify-center rounded  ' key={slide.id}>
+   <div className="w-52 md:w-60 lg:w-72 flex justify-center">
+<img src={slide.img} alt='earpic' className='w-16'/>
 </div>
+       <h4 className='font-medium text-center text-1xl md:text-xl mt-2'>{slide.name}</h4>
+ 
+   </div>
         ))}
-        
-       </Carousel>  
+
         </div> 
+        </div>
     </>
   )
 }

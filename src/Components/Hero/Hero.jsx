@@ -51,8 +51,8 @@ const Hero = () => {
   const Customer = (
     <>
       <div className="  w-full flex flex-col items-center ">
-        <div className="md:text-5xl text-2xl w-10/12 flex justify-center text-center  font-bold mt-3 text-black">
-          <h1>Order for a repair now</h1>
+        <div className=" w-10/12 flex justify-center text-center  font-bold mt-3 ">
+          <h1 className="md:text-5xl sm:text-4xl text-3xl">Order for a repair now</h1>
         </div>
 
         <div className="w-10/12 mt-2   ">
@@ -128,7 +128,7 @@ const Hero = () => {
         <div className="h-full flex items-center justify-center md:justify-start">
           <>
             {/* small cont inside the hero section */}
-            <div className="bg-white lg:w-4/12 md:w-9/12 w-11/12 cus-triger md:ml-10 lg:ml-40">
+            <div className="bg-white lg:w-4/12 md:w-7/12 sm:w-7/12 w-11/12 cus-triger md:ml-10 lg:ml-40">
               {/* small nav  start */}
               <div className="w-full flex justify-between   items-center h-20 Small-nav">
                 <div

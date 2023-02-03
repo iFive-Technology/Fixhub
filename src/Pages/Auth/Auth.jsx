@@ -2,8 +2,10 @@ import React, { useState } from 'react'
 import './Auth.css'
 import logo from '../../Components/Assets/logos/fixlogBlack.png'
 import google from '../../Components/Assets/icons/google.png'
+import { BsArrowLeft } from 'react-icons/bs'
 import {  UserOutlined } from '@ant-design/icons';
-import { Input} from 'antd';
+import { Input} from 'antd'
+import { Link } from 'react-router-dom'
 
 const Auth = () => {
 const [switchAuth, setSwitchAuth] = useState(true);
@@ -126,9 +128,13 @@ const Register = () =>{
     boxShadow: "inset 0 0 0 2000px rgba(0, 0, 0, 0.434)",
    
     }}></div>
-
-<div className='md:w-6/12  flex flex-col items-center '>
-<div className='h-20 w-52 flex flex-col  md:mt-20' style={{ 
+<div className='md:w-6/12 '>
+{/* go back to home button here */}
+  <Link to='/' className='link'><p className='text-lg gap-2 cursor-pointer  text-green-500 flex items-center ml-5 mt-2'><span><BsArrowLeft/></span> Home</p></Link>
+{/* //////////////////////////////////////////////////// */}
+<div className=' flex flex-col items-center '>
+ 
+<div className='h-20 w-52 flex flex-col  md:mt-10' style={{ 
     backgroundImage: `url(${logo})`,
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
@@ -140,7 +146,7 @@ const Register = () =>{
 </div>
 
 </div>
-
+</div>
 </div>
     </>
   )
