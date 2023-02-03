@@ -7,6 +7,7 @@ import CustomerImg from "../Assets/images/CUSTOMER.png";
 import engineer from "../Assets/images/background.jfif";
 
 import { Steps } from "antd";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   const [switchUSer, setSwitchUser] = useState(true);
@@ -34,9 +35,9 @@ const Hero = () => {
         {/* text wrapper */}
         <div className="w-10/12 h-32 mb-32 flex flex-col justify-between">
           <div>
-            <button className="bg-green-400 text-1xl p-3 mb-5 rounded cursor-pointer text-white ">
+            <Link to='enginner' className="link"><button className="bg-green-400 text-1xl p-3 mb-5 rounded cursor-pointer text-white ">
               Sign up to repair
-            </button>
+            </button></Link>
           </div>
           <div>
             <p className="text-lg underline">

@@ -1,0 +1,15 @@
+.price-card{
+    height: 500px;
+    background-color: #fff;
+    -webkit-box-shadow: 5px 13px 34px -35px rgba(66, 68, 90, 1);
+    -moz-box-shadow: 5px 13px 34px -35px rgba(66, 68, 90, 1);
+    box-shadow: 5px 13px 34px -35px rgba(66, 68, 90, 1);
+}
+
+.price-card p{
+    color: black;
+
+}
+.silver{
+    background-color: rgb(247, 247, 247);
+}
