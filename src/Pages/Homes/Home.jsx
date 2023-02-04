@@ -8,6 +8,8 @@ import FQA from '../../Components/FAQ/FQA'
 import News from '../../Components/LatestNews/News'
 import ShopNow from '../../Components/Banner/ShopNow'
 import DeviceSlide from '../../Components/device-icon-slide/DeviceSlide'
+import Footer from '../../Components/Footer/Footer'
+
 
 const Home = () => {
   return (
@@ -22,7 +24,7 @@ const Home = () => {
       <FQA/>
       <News />
       <ShopNow/>
-        
+      <Footer />
         </div> 
     </>
   )
