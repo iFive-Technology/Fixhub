@@ -4,3 +4,6 @@
 .grey{
     background-color: rgb(238, 238, 238);
 }
+::-webkit-scrollbar{
+    display: none;
+}

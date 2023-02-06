@@ -7,6 +7,7 @@ import {Route, Routes} from 'react-router-dom'
 import Auth from './Pages/Auth/Auth';
 import Enginer from './Pages/Enginners/Enginer';
 import Dashboard from './Pages/Dashboard/Dashboard';
+import Dmain from './Eng-Components/D-Main/Dmain';
 
 function App() {
 
@@ -17,7 +18,10 @@ function App() {
         <Route path='/' element={<Home />}/>
         <Route path='/Authentication' element={<Auth />}/>
         <Route path='/enginner' element={<Enginer />} />
-        <Route path='/dashboard' element={<Dashboard />} />
+        <Route path='/dashboard' element={<Dashboard />} >
+          <Route index element={<Dmain />} />
+          {/* <Route path='/profile' element={} /> */}
+        </Route>
       </Routes>
       
 

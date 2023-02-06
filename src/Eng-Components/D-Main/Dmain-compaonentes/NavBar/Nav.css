@@ -1,0 +1,6 @@
+.d-nav{
+    -webkit-box-shadow: 11px 18px 25px -35px rgba(66, 68, 90, 1);
+    -moz-box-shadow: 11px 18px 25px -35px rgba(66, 68, 90, 1);
+    box-shadow: 11px 18px 25px -35px rgba(66, 68, 90, 1);
+border-bottom: 2px solid rgb(240, 239, 239);
+}
