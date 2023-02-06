@@ -5,11 +5,11 @@ import {FiTwitter, FiInstagram, FiFacebook} from 'react-icons/fi'
 
 const Footer = () => {
   return (
-    <div className='flex justify-center  flex-col items-center footer text-white '>
-       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 md:w-11/12  lg:w-11/12 w-11/12 pl-10 mt-28 sub-footer'>
+    <div className='flex justify-center   flex-col items-center footer text-white '>
+       <div className='grid grid-cols-1  md:grid-cols-2 lg:grid-cols-4 md:w-11/12  lg:w-11/12 w-11/12 pl-10 mt-28 sub-footer'>
 
-<div className='place-self-start lg:place-self-center mb-10 lg:mr-3 '>
-<div className='h-20 w-52   ' style={{ 
+<div className='place-self-start  lg:place-self-center mb-10 lg:mr-3 '>
+<div className='h-20 w-52  ' style={{ 
     backgroundImage: `url(${logo})`,
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",

@@ -5,6 +5,7 @@ import { Input, Avatar, Badge } from "antd";
 import { AiOutlineBell, AiOutlineLogout, AiOutlineMessage } from "react-icons/ai";
 import { TbNotification } from "react-icons/tb";
 import { CgProfile } from "react-icons/cg";
+import { Link } from "react-router-dom";
 
 const Nav = () => {
 const [handleProfile, setHandleProfile] = useState(false)
@@ -65,9 +66,9 @@ const triggerDropDown = () => setHandleProfile(!handleProfile)
 
 
               {/* ////////////////////// profile drop-down/////////////////////////// */}
-            <div className={handleProfile ? "bg-white border border-gray-100 w-40 rounded-md p-3 text-md h-auto drop-shadow-xl absolute top-100 right-0" : " hidden"} style={{zIndex: 100}}>
-           <div className="w-full ">
-              <p className="flex items-center text-black gap-2"><span><CgProfile/></span>Profile</p>
+            <div className={handleProfile ? "bg-white border border-gray-100 w-40 rounded-md p-3 text-md h-auto drop-shadow-xl z-10 absolute top-100 right-0" : " hidden"} style={{zIndex: 100}}>
+           <div className="w-full  ">
+              <Link to='profile' className="no-underline">  <p className="flex items-center text-black gap-2"><span><CgProfile/></span>Profile</p> </Link>
               <p className="flex items-center text-black gap-2"><span><AiOutlineMessage /></span>Messages</p>
               <p className="flex items-center text-black gap-2"><span><TbNotification /></span>New orders</p>
               <hr className="w-full"/>
