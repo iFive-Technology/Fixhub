@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import NavBar from '../../Components/NavBar/NavBar'
 import './EngHero.css'
 
@@ -14,7 +15,7 @@ const EngHero = () => {
         <div className='w-8/12 '>
 <h1 className='text-6xl font-bold'>Repair from Home and earn income</h1>
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur ipsam  Labore ad tenetur nam odit culpa eius dolorum quidem, molestiae iste?</p>
-<button className=' p-3 px-4 bg-green-500 text-white rounded mt-3'>Get started for free</button>
+<Link to='dashboard' className='no-underline'><button className=' p-3 px-4 bg-green-500 text-white rounded mt-3'>Get started for free</button></Link>
         </div>
         </div>
 
