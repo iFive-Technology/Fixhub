@@ -12,12 +12,14 @@ import Profile from './Eng-Components/D-Main/D-Pages/Profile/Profile';
 import ProfileSetting from './Eng-Components/D-Main/D-Pages/Profile/Profile-component/ProfileSetting';
 import ProfileLayout from './Eng-Components/D-Main/D-Pages/Profile/ProfileLayout';
 import EngLayout from './Eng-Components/EngLayout';
+// import { AuthContextProvider } from './Pages/Auth/context/AuthContext';
 
 function App() {
 
 
   return (
     <div className="App">
+      {/* <AuthContextProvider></AuthContextProvider> */}
       <Routes>
         <Route path='/' element={<Home />}/>
         <Route path='/Authentication' element={<Auth />}/>;
