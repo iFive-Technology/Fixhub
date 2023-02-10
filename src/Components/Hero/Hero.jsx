@@ -327,10 +327,13 @@ const NextBtn = () =>{
   if(index <= 3){
     setIndex(NextIndex => NextIndex + 1);
   }
+ // validation from the modal form value///////////
+
+
 }
 
 
-  // validation from the modal form value///////////
+ 
 
   
   // the render start here
