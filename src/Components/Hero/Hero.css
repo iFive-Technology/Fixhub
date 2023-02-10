@@ -1,5 +1,9 @@
 .Hero{
     height: 730px;
+   
+}
+.modalgrey{
+    background-color: rgb(247, 244, 244);
 }
 .cus-triger{
     height: 500px;
@@ -25,4 +29,5 @@ cursor: pointer;
 }
 .Small-nav{
     background-color: rgb(241, 241, 241);
+   
 }

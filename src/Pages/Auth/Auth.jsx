@@ -48,7 +48,7 @@ const Auth = () => {
         console.log(result);
       })
       .catch((err) => {
-        console.log(err);
+        // console.log(err);
       });
   };
 
@@ -324,7 +324,7 @@ const Auth = () => {
               hideProgressBar={false}
               newestOnTop={false}
               closeOnClick
-              rtl={false}
+              rtl={false}   
               pauseOnFocusLoss
               draggable
               pauseOnHover
