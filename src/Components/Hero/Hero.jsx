@@ -20,8 +20,14 @@ import {
   UserOutlined,
 } from "@ant-design/icons";
 
+import {db, auth} from '../../Pages/Auth/Firebase'
+import { doc, setDoc } from "firebase/firestore"; 
+
+
+
 
 const Hero = () => {
+  
   const [switchUSer, setSwitchUser] = useState(true);
   const [brand, setBrand] = useState("");
   const [model, setModel] = useState("");
@@ -29,6 +35,11 @@ const Hero = () => {
   const [index, setIndex] = useState(1);
 
   const [show, setShow] = useState(false);
+  // modal form input values
+  
+  const user = auth.currentUser;
+
+  
 
   const handleSwitch = () => {
     setSwitchUser(true);
@@ -134,7 +145,7 @@ const Hero = () => {
     transition: "0.7s",
   };
   const engineerStyle = {
-    backgroundImage: `url(${engineer})`,
+    backgroundImage: `url(https://img.freepik.com/free-photo/front-view-person-repairing-motherboard_23-2148419151.jpg?w=996&t=st=1676888638~exp=1676889238~hmac=bb093fb7b846c125749a739c13076e93709ce3d091206be63db7d37f796d1cac)`,
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
     backgroundPosition: "center",
@@ -146,27 +157,55 @@ const Hero = () => {
 
   // fauli form
   const FaultForm = () => {
+    const [fault, setFault] = useState("");
+    const [imei, setImei] = useState("");
+    const [color, setColor] = useState("");
+    
+    let currentDate = new Date().toJSON().slice(0, 10);
+
+    const cityRef = doc(db, `users/${user.uid}`, 'oders', currentDate );
+    setDoc(cityRef, { 
+      fault: fault,
+      IMEI: imei,
+      Color: color,
+      Brand: brand,
+      Model: model
+     }, { merge: true });
+
+
     return (
       <>
       <div className="w-full pl-20">
-        <p className="mt-2 text-lg font-medium">Apple iphone 6s</p>
+        <p className="mt-2 text-xl font-medium">{brand +' '+ model}</p>
       </div>
       
         <form action="" className="w-10/12">
 <div className=" w-full flex flex-col items-center gap-3   ">
           <label htmlFor="" className="w-full flex flex-col  text-1xl ">
             Device fault* 
-            <input type="text" className="w-full h-8 rounded-sm outline-none text-sm px-2 bg-white"/>
+            <input 
+            type="text"
+             className="w-full h-8 rounded-sm outline-none text-sm px-2 bg-white"
+             onChange={(e) => setFault(e.target.value)}
+             />
           </label>
 
           <label htmlFor="" className="w-full flex flex-col  text-1xl ">
             Device IMEI* 
-            <input type="text" className="w-full h-8 rounded-sm outline-none text-sm  px-2 bg-white"/>
+            <input 
+            type="text" 
+            className="w-full h-8 rounded-sm outline-none text-sm  px-2 bg-white"
+            onChange={(e) => setImei(e.target.value)}
+            />
           </label>
 
           <label htmlFor="" className="w-full flex  flex-col text-1xl ">
             Device color* 
-            <input type="text" className="w-full h-8 rounded-sm outline-none text-sm  px-2 bg-white"/>
+            <input 
+            type="text" 
+            className="w-full h-8 rounded-sm outline-none text-sm  px-2 bg-white"
+            onChange={(e) => setColor(e.target.value)}
+            />
           </label>
 
           </div>
@@ -178,6 +217,25 @@ const Hero = () => {
 
   // delivery and pickup address
    const Address = () =>{
+        // second set
+        const [name, setName] = useState("");
+        const [surname, setSurname] = useState("");
+        const [number, setNumber] = useState("");
+        const [country, setCountry] = useState("");
+        const [city, setCity] = useState("");
+        const [address, setAddress] = useState("");
+
+          let currentDate = new Date().toJSON().slice(0, 10);
+
+        const cityRef = doc(db, `users/${user.uid}`,'oders', currentDate );
+        setDoc(cityRef, { 
+          fullname: name +' '+ surname,
+          Number: number,
+          Country: country,
+          City: city,
+          Address: address
+         }, { merge: true });
+
     return(
     <>
   <div className="w-10/12 mt-3">
@@ -188,30 +246,50 @@ const Hero = () => {
       <div className=" w-full gap-3 flex">
       <label htmlFor="" className="w-full flex flex-col ">
         Name*
-        <input type="text" className="px-2 bg-white outline-none  rounded-sm w-full h-8"/>
+        <input 
+        type="text" 
+        className="px-2 bg-white outline-none  rounded-sm w-full h-8"
+        onChange={(e) => setName(e.target.value)}
+        />
       </label>
 
       <label htmlFor="" className="w-full flex flex-col ">
         Surname*
-        <input type="text" className="px-2 bg-white outline-none  rounded-sm w-full h-8"/>
+        <input
+         type="text" 
+         className="px-2 bg-white outline-none  rounded-sm w-full h-8"
+         onChange={(e) => setSurname(e.target.value)}
+         />
       </label>
 
       </div>
 
       <label htmlFor="" className="w-full flex flex-col ">
         Phone number*
-        <input type="text" className="px-2 bg-white outline-none  rounded-sm w-full h-8"/>
+        <input 
+        type="text" 
+        className="px-2 bg-white outline-none  rounded-sm w-full h-8"
+        onChange={(e) => setNumber(e.target.value)}
+        />
       </label>
 
       <div className=" w-full gap-3 flex">
       <label htmlFor="" className="w-full flex flex-col ">
         Country*
-        <input type="text" className="px-2 bg-white outline-none  rounded-sm w-full h-8"/>
+        <input 
+        type="text" 
+        className="px-2 bg-white outline-none  rounded-sm w-full h-8"
+        onChange={(e) => setCountry(e.target.value)}
+        />
       </label>
 
       <label htmlFor="" className="w-full flex flex-col ">
         City*
-        <input type="text" className="px-2 bg-white outline-none  rounded-sm w-full h-8"/>
+        <input 
+        type="text"
+         className="px-2 bg-white outline-none  rounded-sm w-full h-8"
+         onChange={(e) => setCity(e.target.value)}
+         />
       </label>
 
       </div>
@@ -219,7 +297,12 @@ const Hero = () => {
       
       <label htmlFor="" className="w-full flex flex-col ">
         Pickup and Delivery Address*
-        <textarea name="" id="" cols="30" rows="10" className="px-2 bg-white outline-none  rounded-sm w-full h-32 resize-none"/>
+        <textarea 
+         cols="30" 
+         rows="10"
+          className="px-2 bg-white outline-none  rounded-sm w-full h-32 resize-none"
+          onChange={(e) => setAddress(e.target.value)}
+          />
       </label>
 
      
@@ -230,71 +313,84 @@ const Hero = () => {
    }
 
   //  payment Form
-  const Summary = () =>{
-      return(
-        <>
-        <div className="w-full flex">
+//   const Summary = () =>{
+    
+//       return(
+//         <>
+//         <div className="w-full flex">
 
-<div className="w-full flex justify-center items-center">
-<div className="w-8/12  place-items-center bg-white rounded p-3 mt-10">
-<div className="mb-3"><h5>Faulty device info</h5></div>
-<label className="flex justify-between font-medium">
-        Device Brand
-        <p className="text-1xl text-gray-500 font-normal">Apple</p>
-</label>
+// <div className="w-full flex justify-center items-center">
+// <div className="w-8/12  place-items-center bg-white rounded p-3 mt-10">
+// <div className="mb-3"><h5>Faulty device info</h5></div>
+// <label className="flex justify-between font-medium">
+//         Device Brand
+//         <p className="text-1xl text-gray-500 font-normal">{brand}</p>
+// </label>
 
-<label className="flex justify-between  font-medium">
-        Device Model
-        <p className="text-1xl text-gray-500 font-normal">iPhone 6s</p>
-</label>
+// <label className="flex justify-between  font-medium">
+//         Device Model
+//         <p className="text-1xl text-gray-500 font-normal">{model}</p>
+// </label>
+// <label className="flex justify-between  font-medium">
+//         Device Color
+//         <p className="text-1xl text-gray-500 font-normal">{color}</p>
+// </label>
 
-<label className="flex justify-between  font-medium">
-        Device Fault
-        <p className="text-1xl text-gray-500 font-normal">Broken Screen</p>
-</label>
+// <label className="flex justify-between  font-medium">
+//         Device Fault
+//         <p className="text-1xl text-gray-500 font-normal">{fault}</p>
+// </label>
 
-<label className="flex justify-between  font-medium">
-        Device Imei
-        <p className="text-1xl text-gray-500 font-normal">357873978309933</p>
-</label>
-
-
-</div>
-</div>
+// <label className="flex justify-between  font-medium">
+//         Device Imei
+//         <p className="text-1xl text-gray-500 font-normal">{imei}</p>
+// </label>
 
 
-<div className="w-full flex flex-col gap-5 items-center  pb-5">
+// </div>
+// </div>
+
+
+// <div className="w-full flex flex-col gap-5 items-center  pb-5">
   
-  <div className="bg-white w-9/12 mt-10 p-3 rounded">
-  <div className="mb-3"><h5>Address info</h5></div>
-  <label className="flex justify-between  font-medium">
-        Fullname
-        <p className="text-1xl text-gray-500 font-normal">Chidera igboka</p>
-</label>
-  <label className="flex justify-between  font-medium">
-        Phone number
-        <p className="text-1xl text-gray-500 font-normal">+234 9052405422</p>
-</label>
-  <label className="flex justify-between  font-medium">
-        Address
-        <p className="text-1xl text-gray-500 font-normal w-52">No 27 elesin street obalende, lagos state</p>
-</label>
-  </div>
+//   <div className="bg-white w-9/12 mt-10 p-3 rounded">
+//   <div className="mb-3"><h5>Address info</h5></div>
+//   <label className="flex justify-between  font-medium">
+//         Fullname
+//         <p className="text-1xl text-gray-500 font-normal">{name + surname}</p>
+// </label>
+//   <label className="flex justify-between  font-medium">
+//         Phone number
+//         <p className="text-1xl text-gray-500 font-normal">{number}</p>
+// </label>
+//   <label className="flex justify-between  font-medium">
+//        Country
+//         <p className="text-1xl text-gray-500 font-normal">{country}</p>
+// </label>
+//   <label className="flex justify-between  font-medium">
+//        City
+//         <p className="text-1xl text-gray-500 font-normal">{city}</p>
+// </label>
+//   <label className="flex justify-between  font-medium">
+//         Address
+//         <p className="text-1xl text-gray-500 font-normal w-52">{address}</p>
+// </label>
+//   </div>
 
-  <div className="w-9/12 h-20 bg-white flex items-center justify-between px-3 rounded">
-    <span className="text-5xl"><BsCreditCard /></span> <h3>Payment on delivery</h3>
-  </div>
+//   <div className="w-9/12 h-20 bg-white flex items-center justify-between px-3 rounded">
+//     <span className="text-5xl"><BsCreditCard /></span> <h3>Payment on delivery</h3>
+//   </div>
 
-{/* <button className="w-7/12 py-2 rounded text-white bg-green-500">Confirm order</button> */}
-</div>
+// {/* <button className="w-7/12 py-2 rounded text-white bg-green-500">Confirm order</button> */}
+// </div>
       
 
-        </div>
+//         </div>
         
-        </>
-      );
+//         </>
+//       );
 
-  }
+//   }
 
   // thank you page after other is confirmed
   const Thanks = () =>{
@@ -324,6 +420,8 @@ const PrevBtn = () =>{
 
 }
 const NextBtn = () =>{
+
+
   if(index <= 3){
     setIndex(NextIndex => NextIndex + 1);
   }
