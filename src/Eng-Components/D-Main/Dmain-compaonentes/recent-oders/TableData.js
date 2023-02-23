@@ -1,3 +1,40 @@
+// import {useCollectionData} from 'react-firebase-hooks/firestore'
+import { getAuth } from "firebase/auth";
+import { collection, doc, getDocs, onSnapshot } from "firebase/firestore";
+import { useState } from "react";
+import { db } from "../../../../Pages/Auth/Firebase";
+
+// import { getAuth, onAuthStateChanged } from "firebase/auth";
+
+const user = async () =>{
+
+const querySnapshot = await getDocs(collection(db, "users"));
+querySnapshot.forEach((doc) => {
+
+//     //   setId(doc.id)
+//   console.log(doc.id, " => ", doc.data());
+
+// const User = getAuth();
+// console.log(User);
+// const userId = doc.id
+
+
+});
+querySnapshot.map((userId) =>{
+    console.log(userId);
+})
+getDocs(collection(db, `users/${userId}`, 'oders')).forEach((doc1) => {
+
+    console.log(doc1.id, " => ", doc1.data());
+  });
+
+
+
+}
+
+user();
+
+
 export const table =[
     {
     id : '#ZA3245',

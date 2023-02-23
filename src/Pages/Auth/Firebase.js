@@ -1,6 +1,7 @@
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
-import { collection, getFirestore } from "firebase/firestore";
+import { getFirestore } from "firebase/firestore";
+
 
 // my firebase key config
 const firebaseConfig = {
@@ -23,8 +24,6 @@ const auth = getAuth(app);
 const db = getFirestore(app);
 
 const user = auth.currentUser;
-
-
 
 
 export {auth, db, user };

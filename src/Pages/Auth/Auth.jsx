@@ -13,7 +13,7 @@ import {
   GoogleAuthProvider,
 } from "firebase/auth";
 
-import { collection, doc, setDoc } from "firebase/firestore";
+import { doc, setDoc } from "firebase/firestore";
 import {auth, db} from "./Firebase";
 
 import { ToastContainer, toast } from "react-toastify";
@@ -45,7 +45,7 @@ const Auth = () => {
           profile:  result.user.photoURL,
           joinDate: currentDate
               });
-        console.log(result);
+    
       })
       .catch((err) => {
         // console.log(err);

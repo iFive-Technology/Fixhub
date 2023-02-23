@@ -3,8 +3,6 @@ import NavBar from "../NavBar/NavBar";
 import "./Hero.css";
 import enginner from "../Assets/icons/engineer.png";
 import customer from "../Assets/icons/customer.png";
-import CustomerImg from "../Assets/images/CUSTOMER.png";
-import engineer from "../Assets/images/background.jfif";
 
 import { Steps } from "antd";
 import { Link } from "react-router-dom";
@@ -31,6 +29,18 @@ const Hero = () => {
   const [switchUSer, setSwitchUser] = useState(true);
   const [brand, setBrand] = useState("");
   const [model, setModel] = useState("");
+
+   // second set
+   const [name, setName] = useState("");
+   const [surname, setSurname] = useState("");
+   const [number, setNumber] = useState("");
+   const [country, setCountry] = useState("");
+   const [city, setCity] = useState("");
+   const [address, setAddress] = useState("");
+   const [fault, setFault] = useState("");
+   const [imei, setImei] = useState("");
+   const [color, setColor] = useState("");
+
   // index of each form stored here
   const [index, setIndex] = useState(1);
 
@@ -137,11 +147,11 @@ const Hero = () => {
   );
 
   const customerStyle = {
-    backgroundImage: `url(${CustomerImg})`,
+    backgroundImage: `url(https://img.freepik.com/free-photo/cheerful-happy-dark-skinned-female-with-afro-hairdo-discusses-online-course-with-friend-via-cellular-works-laptop-makes-presentation_273609-3661.jpg?w=996&t=st=1677070696~exp=1677071296~hmac=d1479742b711f08c5ef2f29bb7f25d8f70cd23f7a11502210a7838ae0c2699d1)`,
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
     backgroundPosition: "",
-    boxShadow: "inset 0 0 0 2000px rgba(0, 0, 0, 0.219)",
+    boxShadow: "inset 0 0 0 2000px rgba(0, 0, 0, 0.319)",
     transition: "0.7s",
   };
   const engineerStyle = {
@@ -149,22 +159,23 @@ const Hero = () => {
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
     backgroundPosition: "center",
-    boxShadow: "inset 0 0 0 2000px rgba(0, 0, 0, 0.219)",
+    boxShadow: "inset 0 0 0 2000px rgba(0, 0, 0, 0.319)",
     transition: "0.7s",
   };
 
   // modal form componentes for conditional redering
 
-  // fauli form
-  const FaultForm = () => {
-    const [fault, setFault] = useState("");
-    const [imei, setImei] = useState("");
-    const [color, setColor] = useState("");
-    
-    let currentDate = new Date().toJSON().slice(0, 10);
+const handleFormValidate = () =>{
+
+      let currentDate = new Date().toJSON().slice(0, 10);
 
     const cityRef = doc(db, `users/${user.uid}`, 'oders', currentDate );
     setDoc(cityRef, { 
+      fullname: name +' '+ surname,
+      Number: number,
+      Country: country,
+      City: city,
+      Address: address,
       fault: fault,
       IMEI: imei,
       Color: color,
@@ -172,8 +183,10 @@ const Hero = () => {
       Model: model
      }, { merge: true });
 
+}
 
-    return (
+  // fauli form
+  const FaultForm = (
       <>
       <div className="w-full pl-20">
         <p className="mt-2 text-xl font-medium">{brand +' '+ model}</p>
@@ -212,31 +225,11 @@ const Hero = () => {
     
         </form>
       </>
-    );
-  };
+  );
 
   // delivery and pickup address
-   const Address = () =>{
-        // second set
-        const [name, setName] = useState("");
-        const [surname, setSurname] = useState("");
-        const [number, setNumber] = useState("");
-        const [country, setCountry] = useState("");
-        const [city, setCity] = useState("");
-        const [address, setAddress] = useState("");
-
-          let currentDate = new Date().toJSON().slice(0, 10);
-
-        const cityRef = doc(db, `users/${user.uid}`,'oders', currentDate );
-        setDoc(cityRef, { 
-          fullname: name +' '+ surname,
-          Number: number,
-          Country: country,
-          City: city,
-          Address: address
-         }, { merge: true });
-
-    return(
+   const Address = (
+       
     <>
   <div className="w-10/12 mt-3">
     <div>
@@ -310,91 +303,86 @@ const Hero = () => {
   </div>
     </>
     );
-   }
 
   //  payment Form
-//   const Summary = () =>{
-    
-//       return(
-//         <>
-//         <div className="w-full flex">
+  const Summary = ( 
+        <>
+        <div className="w-full flex">
 
-// <div className="w-full flex justify-center items-center">
-// <div className="w-8/12  place-items-center bg-white rounded p-3 mt-10">
-// <div className="mb-3"><h5>Faulty device info</h5></div>
-// <label className="flex justify-between font-medium">
-//         Device Brand
-//         <p className="text-1xl text-gray-500 font-normal">{brand}</p>
-// </label>
+<div className="w-full flex justify-center items-center">
+<div className="w-8/12  place-items-center bg-white rounded p-3 mt-10">
+<div className="mb-3"><h5>Faulty device info</h5></div>
+<label className="flex justify-between font-medium">
+        Device Brand
+        <p className="text-1xl text-gray-500 font-normal">{brand}</p>
+</label>
 
-// <label className="flex justify-between  font-medium">
-//         Device Model
-//         <p className="text-1xl text-gray-500 font-normal">{model}</p>
-// </label>
-// <label className="flex justify-between  font-medium">
-//         Device Color
-//         <p className="text-1xl text-gray-500 font-normal">{color}</p>
-// </label>
+<label className="flex justify-between  font-medium">
+        Device Model
+        <p className="text-1xl text-gray-500 font-normal">{model}</p>
+</label>
+<label className="flex justify-between  font-medium">
+        Device Color
+        <p className="text-1xl text-gray-500 font-normal">{color}</p>
+</label>
 
-// <label className="flex justify-between  font-medium">
-//         Device Fault
-//         <p className="text-1xl text-gray-500 font-normal">{fault}</p>
-// </label>
+<label className="flex justify-between  font-medium">
+        Device Fault
+        <p className="text-1xl text-gray-500 font-normal">{fault}</p>
+</label>
 
-// <label className="flex justify-between  font-medium">
-//         Device Imei
-//         <p className="text-1xl text-gray-500 font-normal">{imei}</p>
-// </label>
+<label className="flex justify-between  font-medium">
+        Device Imei
+        <p className="text-1xl text-gray-500 font-normal">{imei}</p>
+</label>
 
 
-// </div>
-// </div>
+</div>
+</div>
 
 
-// <div className="w-full flex flex-col gap-5 items-center  pb-5">
+<div className="w-full flex flex-col gap-5 items-center  pb-5">
   
-//   <div className="bg-white w-9/12 mt-10 p-3 rounded">
-//   <div className="mb-3"><h5>Address info</h5></div>
-//   <label className="flex justify-between  font-medium">
-//         Fullname
-//         <p className="text-1xl text-gray-500 font-normal">{name + surname}</p>
-// </label>
-//   <label className="flex justify-between  font-medium">
-//         Phone number
-//         <p className="text-1xl text-gray-500 font-normal">{number}</p>
-// </label>
-//   <label className="flex justify-between  font-medium">
-//        Country
-//         <p className="text-1xl text-gray-500 font-normal">{country}</p>
-// </label>
-//   <label className="flex justify-between  font-medium">
-//        City
-//         <p className="text-1xl text-gray-500 font-normal">{city}</p>
-// </label>
-//   <label className="flex justify-between  font-medium">
-//         Address
-//         <p className="text-1xl text-gray-500 font-normal w-52">{address}</p>
-// </label>
-//   </div>
+  <div className="bg-white w-9/12 mt-10 p-3 rounded">
+  <div className="mb-3"><h5>Address info</h5></div>
+  <label className="flex justify-between  font-medium">
+        Fullname
+        <p className="text-1xl text-gray-500 font-normal">{name + surname}</p>
+</label>
+  <label className="flex justify-between  font-medium">
+        Phone number
+        <p className="text-1xl text-gray-500 font-normal">{number}</p>
+</label>
+  <label className="flex justify-between  font-medium">
+       Country
+        <p className="text-1xl text-gray-500 font-normal">{country}</p>
+</label>
+  <label className="flex justify-between  font-medium">
+       City
+        <p className="text-1xl text-gray-500 font-normal">{city}</p>
+</label>
+  <label className="flex justify-between  font-medium">
+        Address
+        <p className="text-1xl text-gray-500 font-normal w-52">{address}</p>
+</label>
+  </div>
 
-//   <div className="w-9/12 h-20 bg-white flex items-center justify-between px-3 rounded">
-//     <span className="text-5xl"><BsCreditCard /></span> <h3>Payment on delivery</h3>
-//   </div>
+  <div className="w-9/12 h-20 bg-white flex items-center justify-between px-3 rounded">
+    <span className="text-5xl"><BsCreditCard /></span> <h3>Payment on delivery</h3>
+  </div>
 
-// {/* <button className="w-7/12 py-2 rounded text-white bg-green-500">Confirm order</button> */}
-// </div>
+{/* <button className="w-7/12 py-2 rounded text-white bg-green-500">Confirm order</button> */}
+</div>
       
 
-//         </div>
+        </div>
         
-//         </>
-//       );
-
-//   }
+        </>
+    );
 
   // thank you page after other is confirmed
-  const Thanks = () =>{
-    return(
+  const Thanks = (
+
       <>
       <div className="w-full flex justify-center">
     
@@ -410,7 +398,7 @@ const Hero = () => {
       </>
 
     );
-  }
+  
 
 // next and previous button function implemented here
 const PrevBtn = () =>{
@@ -420,7 +408,9 @@ const PrevBtn = () =>{
 
 }
 const NextBtn = () =>{
-
+if (index === 3) {
+  handleFormValidate();
+}
 
   if(index <= 3){
     setIndex(NextIndex => NextIndex + 1);
@@ -484,7 +474,7 @@ const NextBtn = () =>{
       >
         <Modal.Header closeButton>
           <Modal.Title id="example-custom-modal-styling-title">
-            Custom Modal Styling
+            Place order now
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
@@ -525,16 +515,19 @@ const NextBtn = () =>{
 
               <div className="w-full  flex flex-col items-center">
 
-                {index === 1 &&   <FaultForm />}
-                {index === 2 && <Address /> }
-                {index === 3 &&  <Summary /> }
-                {index === 4 &&  <Thanks /> }
+                {index === 1 &&   FaultForm }
+                {index === 2 && Address }
+                {index === 3 &&  Summary }
+                {index === 4 &&  Thanks }
 
                 <div className=" flex  w-10/12 justify-between ">
+
                   {/* previous form button */}
+
                 <button className={index === 1 ? " bg-gray-400  w-28 h-8 text-white flex items-center rounded-sm gap-2 justify-center mt-10" : index === 4 ? 'hidden' : "w-28 h-8 bg-green-500 text-white flex items-center rounded-sm gap-2 justify-center mt-10" }  onClick={PrevBtn} style={index === 1 ? {cursor: 'not-allowed'} : {cursor: 'pointer'} }> <span><BsArrowLeft /></span>Previous</button>
 
                   {/* next form button  */}
+
                 <button className={index === 4 ? 'hidden' : "w-auto px-3 h-8 bg-green-500 text-white flex items-center rounded-sm gap-2 justify-center mt-10"}  onClick={NextBtn}>{index === 3 ? 'Confirm order' : 'Next'} <span><BsArrowRight /></span></button>
 
                 </div>

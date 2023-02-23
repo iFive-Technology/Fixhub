@@ -1,17 +1,16 @@
 import React from "react";
 import './OrderTable.css'
 import {table} from './TableData'
-import img from '../../../../Components/Assets/images/flot.png'
 
 const OdersTabl = () => {
   return (
     <>
       <div>
         <div className=" w-full rounded flex justify-center p-3">
-          <div class="card-body rounded overflow-hidden ">
-            <div class="table-responsive table-card bg-white ">
-              <table class="table table-borderless table-centered align-middle table-nowrap mb-0">
-                <thead class="text-muted table-light">
+          <div className="card-body rounded overflow-hidden ">
+            <div className="table-responsive table-card bg-white ">
+              <table className="table table-borderless table-centered align-middle table-nowrap mb-0">
+                <thead className="text-muted table-light">
                   <tr>
                     <th scope="col">Order ID</th>
                     <th scope="col">Customer</th>
@@ -31,15 +30,15 @@ const OdersTabl = () => {
                     <td>
                       <a
                         href="apps-ecommerce-order-details.html"
-                        class="no-underline  "
+                        className="no-underline  "
                         style={{color: '#4682B4'}}
                       >
                       <span className="font-medium">{TableItem.id}</span> 
                       </a>
                     </td>
                     <td>
-                      <div class="d-flex align-items-center">
-                        <div class="flex-shrink-0  rounded-xl w-7 h-7"  style={{ 
+                      <div className="d-flex align-items-center">
+                        <div className="flex-shrink-0  rounded-xl w-7 h-7"  style={{ 
     backgroundImage: `url("https://images.pexels.com/photos/3992656/pexels-photo-3992656.png?auto=compress&cs=tinysrgb&w=600")`,
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
@@ -49,7 +48,7 @@ const OdersTabl = () => {
     }}>
 
                         </div>
-                        <div class="flex-grow-1 ml-2">{TableItem.name}</div>
+                        <div className="flex-grow-1 ml-2">{TableItem.name}</div>
                       </div>
                     </td>
                     <td>{TableItem.brand}</td>
