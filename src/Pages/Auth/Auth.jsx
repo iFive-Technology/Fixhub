@@ -5,7 +5,7 @@ import google from "../../Components/Assets/icons/google.png";
 import { BsArrowLeft } from "react-icons/bs";
 import { UserOutlined } from "@ant-design/icons";
 import { Input, Result } from "antd";
-import { Link } from "react-router-dom";
+import { Link, useNavigate  } from "react-router-dom";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
@@ -22,7 +22,7 @@ import "react-toastify/dist/ReactToastify.css";
 const Auth = () => {
   const [switchAuth, setSwitchAuth] = useState(true);
   const [passwordVisible, setPasswordVisible] = useState(false);
-
+  const navigate = useNavigate();
   // current date that will be use to know when user join us
   let currentDate = new Date().toJSON().slice(0, 10);
 
@@ -45,7 +45,8 @@ const Auth = () => {
           profile:  result.user.photoURL,
           joinDate: currentDate
               });
-    
+// vavigate to home screen if the user is login
+           navigate('/');
       })
       .catch((err) => {
         // console.log(err);
@@ -84,7 +85,8 @@ const Auth = () => {
               progress: undefined,
               theme: "dark",
             });
-          
+          // vavigate to home screen if the user is login
+          navigate('/');
           }
         );
       } catch (e) {

@@ -166,18 +166,19 @@ const Hero = () => {
   // modal form componentes for conditional redering
 
 const handleFormValidate = () =>{
-
+      let orderId = '#' + Math.random().toString(36).slice(7).toUpperCase();
       let currentDate = new Date().toJSON().slice(0, 10);
 
     const cityRef = doc(db, `users/${user.uid}`, 'oders', currentDate );
     setDoc(cityRef, { 
+      OdersID: orderId,
       fullname: name +' '+ surname,
       Number: number,
       Country: country,
       City: city,
       Address: address,
       fault: fault,
-      IMEI: imei,
+      Imei: imei,
       Color: color,
       Brand: brand,
       Model: model
@@ -408,15 +409,16 @@ const PrevBtn = () =>{
 
 }
 const NextBtn = () =>{
-if (index === 3) {
-  handleFormValidate();
-}
-
+  console.log('start');
+  // validation from the modal form value///////////
+  if (index === 3) {
+    handleFormValidate();
+  }
+  console.log('end');
+  
   if(index <= 3){
     setIndex(NextIndex => NextIndex + 1);
   }
- // validation from the modal form value///////////
-
 
 }
 

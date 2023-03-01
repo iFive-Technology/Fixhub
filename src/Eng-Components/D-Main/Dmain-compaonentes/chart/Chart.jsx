@@ -98,7 +98,7 @@ const Chart = () => {
     <>
       <div className="flex items-center gap-5 w-full p-3">
         {/* ///////////////////// */}
-        <div className="w-96 bg-white h-96 flex  flex-col  rounded overflow-hidden">
+        <div className="w-96 bg-white h-96 relative flex  flex-col  rounded overflow-hidden">
           <div className="border-b bg-gray h-12 flex items-center px-2">
             <h6>Store Visits by Source</h6>
           </div>
@@ -157,8 +157,14 @@ const Chart = () => {
           </div>
         </div>
 
+
+
+
+
+
+
         {/* //////////////////////////////// */}
-        <div className="w-full bg-white flex flex-col  rounded overflow-hidden items-center h-96">
+        <div className="w-full bg-white relative flex flex-col  rounded overflow-hidden items-center h-96">
           <div className=" w-full h-12 border-gary border-b  flex items-center px-2">
             <h6>Store Visits by Source</h6>
           </div>

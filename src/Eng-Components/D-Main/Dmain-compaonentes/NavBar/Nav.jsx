@@ -24,7 +24,7 @@ const triggerDropDown = () => setHandleProfile(!handleProfile)
   const onSearch = (value) => console.log(value);
   return (
     <>
-      <div className="flex bg-white justify-between items-center px-5 w-full h-16 fixed d-nav" >
+      <div className="flex bg-white z-50 justify-between items-center px-5 w-full h-16 fixed d-nav" >
         <div className="  ">
           <Search
             placeholder=" search "
